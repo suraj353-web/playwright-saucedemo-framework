@@ -23,26 +23,31 @@ export class LoginPage extends BasePage {
         await this.page.goto('/');
     }
 
-    async enterUsername(username: string) {
-    await this.username.fill(username);
-    }
+    // async enterUsername(username: string) {
+    // await this.username.fill(username);
+    // }
 
-    async enterPassword(password: string) {
-        await this.password.fill(password);
-    }
+    // async enterPassword(password: string) {
+    //     await this.password.fill(password);
+    // }
 
-    async clickLoginButton() {
-        await this.loginButton.click();
-    }
+    // async clickLoginButton() {
+    //     await this.loginButton.click();
+    // }
 
     async login(user: string, pass: string) {
-        await this.enterUsername(user);
-        await this.enterPassword(pass);
-        await this.clickLoginButton();
+        // await this.enterUsername(user);
+        // await this.enterPassword(pass);
+        // await this.clickLoginButton();
+
+        await this.fill(this.username, user);
+        await this.fill(this.password, pass);
+        await this.click(this.loginButton);
     }
 
     async getErrorMessage() {
         return await this.errorMessage.textContent();
+       
     }
 
 }

@@ -32,6 +32,7 @@ test('Invalid Login', async ({ page }) => {
 
     const errorMessage = await login.getErrorMessage();
     await expect(errorMessage).toContain('Epic sadface: Username and password do not match any user in this service');
+    await expect(login.errorMessage).toHaveText('Epic sadface: Username and password do not match any user in this service');
 
 });
 
